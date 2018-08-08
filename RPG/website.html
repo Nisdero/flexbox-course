@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Google</title>
+        <style>
+            * {
+                margin: 0px;
+            }
+            #logo {
+                clear: both;
+                width: 100%;
+                text-align: center;
+            }
+            header {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                text-align: right;
+            }
+            header ul li {
+                display: inline-block;
+                margin: 10px;
+            }
+            header a:link {
+                color: black;
+                font-family: sans-serif;
+                font-size: .8em;
+                text-decoration: none;
+            }
+            header a:hover {
+                text-decoration: underline;
+            }
+            #sign-in {
+                border-radius: 2px;
+                width: 80px;
+                height: 35px;
+                background-color: #2289d5;
+                color: white;
+                position: relative;
+                font-size: .8em;
+                text-align: center;
+                font-weight: 600;
+                margin: 0px 5px 5px 5px;
+                border: 1px solid #CAC9C9;
+            }
+            #content {
+                margin-top: 200px !important;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+            #search {
+                clear: both;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+            }
+            #search-box {
+                width: 500px;
+                height: 30px;
+                border: 1px solid #999999;
+                padding: 5px;
+                margin: 0px 0px 5px 0px;
+            }
+            #search-buttons {
+                clear: both;
+                margin-top: 30px;
+            }
+
+            .button {
+                border-radius: 2px;
+                width: 140px;
+                height: 40px;
+                background-color: #f3f3f3;
+                color: #686363;
+                position: relative;
+                font-size: .80em;
+                font-family: Arial;
+                text-align: center;
+                font-weight: 600;
+                margin: 0px 5px 5px 5px;
+                border: 0px solid white;
+            }
+            footer {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                border-top: 1px solid #f1f1f1;
+                text-align: right;
+                width: 100%;
+                background-color: white;
+                margin-bottom: 0px;
+            }
+            footer ul li {
+                display: inline-block;
+                margin: 10px;
+            }
+            footer a:link {
+                text-decoration: none;
+                color: #787878;
+                list-style-type: none;
+                font-family: sans-serif;
+                font-size: .8em;
+            }
+            footer a:hover {
+                text-decoration: underline;
+            }
+            #footer-left {
+                float: left;
+            }
+            #footer-right {
+                float: right;
+                margin-right: 30px;
+            }
+            .button:hover {
+                border: 1px solid #a6a6a6;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <ul id="nav-right">
+                <li><a href="https://www.google.com/gmail/about#">Gmail</a></li>
+                <li><a href="https://images.google.com/">Images</a></li>
+                <li><input type="button" id="sign-in" value="Sign in"></li>
+            </ul>
+            <script type="text/javascript">
+                function focusIt()
+                {
+                    var my_search_box = document.getElementById("search-box");
+                    my_search_box.focus();
+                }
+                onload = focusIt;
+            </script>
+
+        </header>
+        <div id="content">
+            <div id="logo">
+                <img src="logo.png" alt="Google Logo" width="350" />
+            </div>
+
+            <div id="search">
+                <input id="search-box" type="text" name="search"/>
+                <div id="search-buttons">
+                    <input type="button" class="button" name="google" value="Google Search" />
+                    <input type="button" class="button" name="google" value="I'm Feeling Lucky'" />
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+    <div id="footer-right">
+        <li><a href="https://policies.google.com/privacy?hl=en&gl=us">Privacy</a></li>
+            <li><a href="https://policies.google.com/terms?hl=en&gl=us">Terms</a></li>
+                <li><a href="#">Settings</a></li>
+        
+    </div>
+    <div id="footer-left">
+        <li><a href="#">Advertising</a></li>
+            <li><a href="#">Business</a></li>
+    </div>
+    </footer>
+
+
+</html>

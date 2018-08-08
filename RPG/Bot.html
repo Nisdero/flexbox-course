@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>RPG</title>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div>Welcome</div>
+        <p>
+            <label for="options">Choose your weapon</label><br>
+            <input type="checkbox" id="wep1">Sword<br>
+            <input type="checkbox" id="wep2">Maul<br>
+        </p>
+        <p>
+            <button onclick="Attack_01()">Attack Orc 1</button>
+            <button onclick="Attack_02()">Attack Orc 2</button>
+            <button onclick="Attack_03()">Attack Orc Chieftan</button>
+        </p>
+        <p id="hit/miss"></p>
+        <p id="Dmg"></p>
+        <p id="Alive Y/N"></p>
+        <p id="TDmgN"></p>
+        <p id="TDmg"></p>
+   </body>
+
+    <script>
+        var Attack_Roll;
+
+        let Roll = (numOne, numTwo) => {
+            var numThree = 0;
+            for (var i = 0;i < numOne ; i++) 
+            var numThree = Math.floor(Math.random() * numTwo) + 1 + numThree;
+            return numThree;
+        }
+        var TDmg = 0;
+        var Dmg = 0;
+        var Cen_Hp = 0;
+        var Orc1_Hp = 30;
+        var Orc2_Hp = 30;
+        var Orc3_Hp = 45;
+
+        const Attack_01 = () => {
+            if(wep1.checked==true) {
+                Attack_Roll = Roll(1,20) + 3;
+                if(Attack_Roll >= 13) {
+                    document.getElementById("hit/miss").innerHTML = "You Hit Orc 1";
+                    Dmg = Roll(1,6);
+                    Orc1_Hp = Orc1_Hp - Dmg;
+                    TDmgO1 = TDmgO1 + Dmg;
+                    document.getElementById("TDmgN").innerHTML = "Total Damage dealt to Orc 1";
+                    document.getElementById("TDmg").innerHTML = TDmgO1;
+                    if (Orc1_Hp >= 1) {
+                        document.getElementById("Alive Y/N").innerHTML = "Orc 1 is still alive";
+                    } else { document.getElementById("Alive Y/N").innerHTML = "Orc 1 is dead"; 
+                             document.getElementById("Dmg").innerHTML = Orc1_Hp; }
+                } else { document.getElementById("hit/miss").innerHTML = "You Missed Orc 1"; }
+            }
+            if(wep2.checked==true) {
+                Attack_Roll = Roll(1,20) + 3;
+                if(Attack_Roll >= 13) {
+                    document.getElementById("hit/miss").innerHTML = "You Hit Orc 1";
+                    Dmg = Roll(2,6);
+                    Orc1_Hp = Orc1_Hp - Dmg;
+                    TDmgO1 = TDmgO1 + Dmg;
+                    document.getElementById("TDmgN").innerHTML = "Total Damage Dealt to Orc 1"
+                    document.getElementById("TDmg").innerHTML = TDmgO1;
+                    if (Orc1_Hp >= 1) {
+                        document.getElementById("Alive Y/N").innerHTML = "Orc 1 is still Alive";
+                        document.getElementById("Dmg").innerHTML = Orc1_Hp;
+                    } else { document.getElementById("Alive Y/N").innerHTML = "Orc 1 is Dead"; 
+                             document.getElementById("Dmg").innerHTML = Orc1_Hp; }
+                } else { document.getElementById("hit/miss").innerHTML = "You Missed Orc 1"; }
+            }
+        }
+
+                const Attack_02 = () => {
+            if(wep1.checked==true) {
+                Attack_Roll = Roll(1,20) + 3;
+                if(Attack_Roll >= 13) {
+                    document.getElementById("hit/miss").innerHTML = "You Hit Orc 2";
+                    Dmg = Roll(1,6);
+                    Orc2_Hp = Orc2_Hp - Dmg;
+                    TDmgO2 = TDmgO2 + Dmg;
+                    document.getElementById("TDmgN").innerHTML = "Total Damage dealt to Orc 2";
+                    document.getElementById("TDmg").innerHTML = TDmgO2;
+                    if (Orc2_Hp >= 1) {
+                        document.getElementById("Alive Y/N").innerHTML = "Orc 2 is still alive";
+                        document.getElementById("Dmg").innerHTML = Orc2_Hp;
+                    } else { document.getElementById("Alive Y/N").innerHTML = "Orc 2 is dead"; 
+                             document.getElementById("Dmg").innerHTML = Orc2_Hp; }
+                } else { document.getElementById("hit/miss").innerHTML = "You Missed Orc 2"; }
+            }
+            if(wep2.checked==true) {
+                Attack_Roll = Roll(1,20) + 3;
+                if(Attack_Roll >= 13) {
+                    document.getElementById("hit/miss").innerHTML = "You Hit Orc 2";
+                    Dmg = Roll(2,6);
+                    Orc2_Hp = Orc2_Hp - Dmg;
+                    TDmgO2 = TDmgO2 + Dmg;
+                    document.getElementById("TDmgN").innerHTML = "Total Damage Dealt to Orc 2"
+                    document.getElementById("TDmg").innerHTML = TDmgO2;
+                    if (Orc2_Hp >= 1) {
+                        document.getElementById("Alive Y/N").innerHTML = "Orc 2 is still Alive";
+                        document.getElementById("Dmg").innerHTML = Orc2_Hp;
+                    } else { document.getElementById("Alive Y/N").innerHTML = "Orc 2 is Dead"; 
+                             document.getElementById("Dmg").innerHTML = Orc2_Hp; }
+                } else { document.getElementById("hit/miss").innerHTML = "You Missed Orc 2"; }
+            }
+        }
+        const Attack_03 = () => {
+            if(wep1.checked==true) {
+                Attack_Roll = Roll(1,20) + 3;
+                if(Attack_Roll >= 13) {
+                    document.getElementById("hit/miss").innerHTML = "You Hit Orc 3";
+                    Dmg = Roll(1,6);
+                    Orc3_Hp = Orc3_Hp - Dmg;
+                    TDmgO3 = TDmgO3 + Dmg;
+                    document.getElementById("TDmgN").innerHTML = "Total Damage dealt to Orc 3";
+                    document.getElementById("TDmg").innerHTML = TDmgO3;
+                    if (Orc3_Hp >= 1) {
+                        document.getElementById("Alive Y/N").innerHTML = "Orc 3 is still alive";
+                        document.getElementById("Dmg").innerHTML = Orc3_Hp;
+                    } else { document.getElementById("Alive Y/N").innerHTML = "Orc 3 is dead"; 
+                             document.getElementById("Dmg").innerHTML = Orc3_Hp; }
+                } else { document.getElementById("hit/miss").innerHTML = "You Missed Orc 3"; }
+            }
+            if(wep2.checked==true) {
+                Attack_Roll = Roll(1,20) + 3;
+                if(Attack_Roll >= 13) {
+                    document.getElementById("hit/miss").innerHTML = "You Hit Orc 3";
+                    Dmg = Roll(2,6);
+                    Orc3_Hp = Orc3_Hp - Dmg;
+                    TDmgO3 = TDmgO3 + Dmg;
+                    document.getElementById("TDmgN").innerHTML = "Total Damage Dealt to Orc 3"
+                    document.getElementById("TDmg").innerHTML = TDmgO3;
+                    if (Orc3_Hp >= 1) {
+                        document.getElementById("Alive Y/N").innerHTML = "Orc 3 is still Alive";
+                        document.getElementById("Dmg").innerHTML = Orc3_Hp;
+                    } else { document.getElementById("Alive Y/N").innerHTML = "Orc 3 is Dead"; 
+                             document.getElementById("Dmg").innerHTML = Orc3_Hp; }
+                } else { document.getElementById("hit/miss").innerHTML = "You Missed Orc 3"; }
+            }
+        }
+
+    </script>
+
+</html>
